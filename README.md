@@ -4,6 +4,8 @@
 
 To implement  SR flipflop using verilog and validating their functionality using their functional tables
 
+**DATE** : 
+
 **SOFTWARE REQUIRED:**
 
 Quartus prime
@@ -37,12 +39,31 @@ The maximum possible groupings of adjacent ones are already shown in the figure.
 /* write all the steps invloved */
 
 **PROGRAM**
+```
+ Developed by: ROHIT G
+ RegisterNumber: 212222240083
+```
+```
+module SRflipflop(S, R, clk, Q, Qbar);
+input S, R, clk;
+output reg Q, Qbar;
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+always @(posedge clk)
+begin
+    if (S == 0 && R == 0) ;          
+    else if (S == 0 && R == 1) Q = 0;   
+    else if (S == 1 && R == 0) Q = 1;    
+    else Q = 1'bx;                    
+    Qbar = ~Q;
+end
+endmodule
+```
 
 **RTL LOGIC FOR FLIPFLOPS**
+<img width="1158" height="650" alt="SR logic diagram" src="https://github.com/user-attachments/assets/8ddcce6a-1af3-42d7-b448-dd33d3a1e060" />
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
+<img width="1913" height="433" alt="SR waveform" src="https://github.com/user-attachments/assets/3bc42a39-b6eb-4b11-9d70-493d1a1424cf" />
 
 **RESULTS**
+Implementation of SR flipflop using verilog and validating their functionality using their functional tables was successfully done.
